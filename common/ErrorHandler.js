@@ -6,18 +6,21 @@ module.exports = {
             ret = {
                 errors: errorsArray
             },
-            errIndex;
+            errIndex, errorObj;
 
         // Log out the full error object including stack trace for debugging purposes
         console.error(err);
 
         for (errIndex in errors) {
-            // Only need message, error type and value for client
-            errorsArray.push({
-                message: errors[errIndex].message,
-                type: errors[errIndex].name,
-                value: errors[errIndex].value
-            });
+            errorObj = errors[errIndex];
+            if (errors.hasOwnProperty(errIndex)) {
+                // Only need message, error type and value for client
+                errorsArray.push({
+                    message: errorObj.message,
+                    type: errorObj.name,
+                    value: errorObj.value
+                });
+            }
         }
         return ret;
     }
