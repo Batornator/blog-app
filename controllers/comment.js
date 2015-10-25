@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
         return res.json(comments);
     }, function(err) {
         // Error in find query is more likely to be caused by an internal error so send 500
-        return res.status(500).json(errorHandler.getResponseObject(err));
+        return res.status(500).json(errorHandler.getMongooseErrorObject(err));
     });
 
 });
@@ -39,7 +39,7 @@ router.post('/', function(req, res) {
         return res.json(newComment);
     }, function(err) {
         // Assume validation error so bad request for simplicity
-        return res.status(400).json(errorHandler.getResponseObject(err));
+        return res.status(400).json(errorHandler.getMongooseErrorObject(err));
     });
 });
 
