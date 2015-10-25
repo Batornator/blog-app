@@ -4,7 +4,7 @@ var comment = require('../models/comment'),
     errorHandler = require('../helpers/errorHandler');
 
 /**
- * Get request for comments
+ * GET request for comments. Filter by postId if one is passed on the queryString
  */
 router.get('/', function(req, res) {
     var query = req.query,
@@ -29,6 +29,9 @@ router.get('/', function(req, res) {
 
 });
 
+/**
+ * POST request for comments. Creates a comment model from the POST body
+ */
 router.post('/', function(req, res) {
     var commentModel = new comment(req.body);
 

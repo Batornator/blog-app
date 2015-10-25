@@ -4,10 +4,10 @@ var post = require('../models/post'),
     errorHandler = require('../helpers/errorHandler');
 
 /**
- * Get request for posts
+ * GET request for posts. Filter by userId if one is passed on the queryString
  */
 router.get('/', function(req, res) {
-            var query = req.query,
+    var query = req.query,
         mogooseQuery;
 
     mongooseQuery = post.find();
@@ -29,6 +29,9 @@ router.get('/', function(req, res) {
 
 });
 
+/**
+ * POST request for posts. Creates a post model from the POST body
+ */
 router.post('/', function(req, res) {
     var postModel = new post(req.body);
 

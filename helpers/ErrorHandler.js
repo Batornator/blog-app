@@ -1,10 +1,13 @@
 module.exports = {
 
+    /**
+     * Takes a mongoose error object and produces an object containing an array of errors suitable for output
+     */
     getResponseObject: function(err) {
         var errors = err.errors,
             errorsArray = [],
             ret = {
-            errors: errorsArray
+                errors: errorsArray
             },
             errIndex, errorObj;
 

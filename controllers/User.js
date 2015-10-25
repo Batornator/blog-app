@@ -4,7 +4,7 @@ var user = require('../models/user'),
     errorHandler = require('../helpers/errorHandler');
 
 /**
- * Get request for users
+ * GET request for users, returns all users
  */
 router.get('/', function(req, res) {
     user.find().then(function(users) {
@@ -14,6 +14,9 @@ router.get('/', function(req, res) {
     });
 });
 
+/**
+ * POST request for users. Creates a user model from the POST body
+ */
 router.post('/', function(req, res) {
     var userModel = new user(req.body);
 
