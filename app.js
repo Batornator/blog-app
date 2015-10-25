@@ -20,8 +20,9 @@ app.use(require('./controllers'));
 /**
  * Connect to the database
  */
-db.connect('mongodb://localhost/dayco-stl', function(err) {
+db.connect('mongodb://localhost/blogApp', function(err) {
     if (!err) {
+        db.initData();
         db.getDatabaseInfo();
     } else {
         console.error(err);

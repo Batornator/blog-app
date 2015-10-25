@@ -1,7 +1,7 @@
 /**
  * Comment Model
  */
-var ModelHelper = require('../common/ModelHelper');
+var ModelHelper = require('../helpers/ModelHelper');
 
 module.exports = ModelHelper.defineMongooseModel('comment', {
     postId: {

@@ -1,10 +1,10 @@
 module.exports = {
 
-    getReadableError: function(err) {
+    getResponseObject: function(err) {
         var errors = err.errors,
             errorsArray = [],
             ret = {
-                errors: errorsArray
+            errors: errorsArray
             },
             errIndex, errorObj;
 

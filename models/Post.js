@@ -1,7 +1,7 @@
 /**
  * Post Model
  */
-var ModelHelper = require('../common/ModelHelper');
+var ModelHelper = require('../helpers/ModelHelper');
 
 module.exports = ModelHelper.defineMongooseModel('post', {
     userId: {
