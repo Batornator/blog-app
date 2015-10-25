@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
     user.find().then(function(users) {
         return res.json(users);
     }, function(err) {
-        return res.json(errorHandler.getResponseObject(err));
+        return res.json(errorHandler.getMongooseErrorObject(err));
     });
 });
 
@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
         return res.json(newUser);
     }, function(err) {
         //Assume bad request for simplicitys sake
-        return res.status(400).json(errorHandler.getResponseObject(err));
+        return res.status(400).json(errorHandler.getMongooseErrorObject(err));
     });
 });
 
