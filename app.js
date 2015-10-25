@@ -27,7 +27,7 @@ app.use(require('./controllers'));
  */
 db.connect('mongodb://localhost/blogApp', function(err) {
     if (!err) {
-        db.initData();
+        db.initDummyData();
         db.getDatabaseInfo();
     } else {
         console.error(err);

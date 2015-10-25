@@ -25,7 +25,7 @@ module.exports = {
     },
 
     // Test data insertion
-    initData: function() {
+    initDummyData: function() {
         this.initUsers();
     },
 
