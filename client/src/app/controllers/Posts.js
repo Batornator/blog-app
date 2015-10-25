@@ -5,7 +5,9 @@ angular.module('Posts', ['RestHelper']).controller('PostsController', function($
     // Call to the Rest API to retrieve a list of all users
     function init() {
 
-        RestHelper.get('/posts?userId=' + $routeParams.userId).then(function(posts) {
+        RestHelper.get('/posts', {
+            userId: $routeParams.userId
+        }).then(function(posts) {
             $scope.posts = posts.data;
         });
     }
