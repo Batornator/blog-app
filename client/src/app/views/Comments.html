@@ -1,0 +1,17 @@
+<h1>Comments Page</h1>
+
+<hr>
+
+<ul>
+    <li ng-repeat="comment in comments">
+        <div>
+            <p>{{comment.id}}</p>
+            <p>{{comment.message}}</p>
+        </div>
+
+        <hr>
+        
+    </li>
+</ul>
+
+<input type="button" value="Back to Posts" ng-click="model.onBackClick()">

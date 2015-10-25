@@ -1,0 +1,15 @@
+<h1>Users Page</h1>
+
+<hr>
+
+<ul>
+    <li ng-repeat="user in users" ng-click="model.onUserClick(user.id)">
+        <div>
+            <h5><strong>Username: </strong> {{user.username}}</h5>
+            <h6><strong>Name: </strong> {{user.name}}</h6>
+            <p><strong>ID: </strong> {{user.id}}</p>
+            <p><strong>Email Address: </strong><a href="mailto:{{user.email}}">{{user.email}}</a></p>
+        </div>
+        <hr>
+    </li>
+</ul>

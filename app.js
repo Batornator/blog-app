@@ -1,8 +1,11 @@
-var express = require('express'),
+var http = require('http'),
+    express = require('express'),
     bodyParser = require('body-parser'),
+    path = require('path'),
     app = express(),
     db = require('./db'),
-    port = process.env.PORT || 8080;
+    port = process.env.PORT || 8080,
+    server;
 
 //CORS
 app.use(function(req, res, next) {
@@ -15,6 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
+app.use(express.static(path.join(__dirname, 'client')));
 app.use(require('./controllers'));
 
 /**
@@ -29,13 +34,16 @@ db.connect('mongodb://localhost/blogApp', function(err) {
     }
 });
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
+app.set('port', port);
 
-app.listen(port);
+/**
+ * Create HTTP server.
+ */
+server = http.createServer(app);
 
-module.exports = app;
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+
+module.exports = server;

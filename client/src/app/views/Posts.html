@@ -1,0 +1,18 @@
+<h1>Posts Page</h1>
+
+<hr>
+
+<ul>
+    <li ng-repeat="post in posts" ng-click="model.onPostClick(post.id)">
+        <div>
+            <h4><strong>{{post.title}}</strong></h4>
+            <p>{{post.id}}</p>
+            <p>{{post.message}}</p>
+        </div>
+
+        <hr>
+
+    </li>
+</ul>
+
+<input type="button" value="Back to Users" ng-click="model.onBackClick()">
