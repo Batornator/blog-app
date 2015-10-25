@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'client/src')));
 app.use(require('./controllers'));
 
 /**

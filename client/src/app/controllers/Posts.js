@@ -11,7 +11,7 @@ angular.module('Posts', ['RestHelper']).controller('PostsController', function($
     }
 
     this.onPostClick = function(postId) {
-        $location.path('/src/posts/' + postId + '/comments');
+        $location.path('/posts/' + postId + '/comments');
     };
 
     this.onBackClick = function() {

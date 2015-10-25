@@ -10,7 +10,7 @@ angular.module('Users', ['RestHelper']).controller('UsersController', function($
     }
 
     this.onUserClick = function(userId) {
-        $location.path('/src/user/' + userId + '/posts');
+        $location.path('/user/' + userId + '/posts');
     };
 
 });
