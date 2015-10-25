@@ -4,7 +4,7 @@ var comment = require('../models/comment'),
     errorHandler = require('../helpers/errorHandler');
 
 /**
- * Get request for posts
+ * Get request for comments
  */
 router.get('/', function(req, res) {
     var query = req.query,
